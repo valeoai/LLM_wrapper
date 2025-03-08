@@ -5,15 +5,15 @@ Example usage:
 
 python scripts/handle_checkpoints.py \
 --mode create \
---checkpoint_dir /path/to/checkpoint \
+--checkpoint_path /path/to/checkpoint \
 --outdir weights/release \
---maxsize 2G
+--maxsize 1900MB
 
 2. Extract tar files
 
 python scripts/handle_checkpoints.py \
 --mode extract \
---checkpoint_dir /path/to/checkpoint \
+--checkpoint_path /path/to/checkpoint \
 --outdir tmp/release
 """
 
@@ -49,7 +49,7 @@ def extract_tar_file(tar_dir: str, outdir: str) -> None:
     subprocess.run(f"cat {part_name} > {tmp_tar}", shell=True)
 
     # Extract tar file
-    weightdir = os.path.join(outdir, "weights")
+    weightdir = outdir #os.path.join(outdir, "weights")
     os.makedirs(weightdir, exist_ok=True)
     subprocess.run(f"tar xzf {tmp_tar} -C {weightdir}", shell=True)
 
@@ -62,7 +62,7 @@ if __name__ == "__main__":
     parser.add_argument("--mode", type=str, required=True, choices=["create", "extract"])
     parser.add_argument("--checkpoint_path", type=str, required=True)
     parser.add_argument("--outdir", type=str, required=True)
-    parser.add_argument("--maxsize", type=str, default="2G")
+    parser.add_argument("--maxsize", type=str, default="1900MB")
     args = parser.parse_args()
 
     os.makedirs(args.outdir, exist_ok=True)
