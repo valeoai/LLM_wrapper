@@ -48,15 +48,70 @@ Llama 3 8B Instruct LLM, etc.).
 
 ### Checkpoints
 
-We release 8 checkpoints (LoRA weights) related to LLM-wrapper's adaptation of **Florence-2-Large** with **Meta-Llama-3-8B-Instruct** and **Mixtral 8x7B Instruct**, respectively fine-tuned on the train sets of:
-* RefCOCO  unc ([``FT_Mixtral_8x7_on_RefCOCO_for_Flo2L``]() and [``FT_Llama3_8_on_RefCOCO_for_Flo2L``]())
-* RefCOCO+ unc ([``FT_Mixtral_8x7_on_RefCOCO+_for_Flo2L``]() and [``FT_Llama3_8_on_RefCOCO+_for_Flo2L``]())
-* RefCOCOg umd ([``FT_Mixtral_8x7_on_RefCOCOg_for_Flo2L``]() and [``FT_Llama3_8_on_RefCOCOg_for_Flo2L``]())
-* Talk2Car     ([``FT_Mixtral_8x7_on_Talk2Car_for_Flo2L``]() and [``FT_Llama3_8_on_Talk2Car_for_Flo2L``]())
+We release 8 checkpoints (LoRA weights) related to LLM-wrapper's adaptation of **Florence-2-Large** with respect to different combinations of LLM (**Meta-Llama-3-8B-Instruct** and **Mixtral 8x7B Instruct**) and training data (RefCOCO, RefCOCO+, RefCOCOg and Talk2Car). These checkpoints lead to the REC results given in the paper's main results.
 
-Download the **checkpoints** in this repository's **release** and save them in a subfolder named ``my_FT_models``, placed in the corresponding dataset folder (``./llm_wrapper/data/{dataset_name}/my_FT_models``).
+<table style="margin: auto">
+  <thead>
+    <tr>
+      <th>LLM</th>
+      <th># of<br />LoRA params</th>
+      <th>Training data</th>
+      <th>LLM-wrapper</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LLama 3 8B Instruct</td>
+      <td align="left">352M</td>
+      <td align="left">RefCOCO train (unc)</td>
+      <td><a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Llama3_8_on_RefCOCO_for_Flo2L_chunked.tar.gz.part_aa">part 1</a>, <a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Llama3_8_on_RefCOCO_for_Flo2L_chunked.tar.gz.part_ab">part 2</a>, <a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Llama3_8_on_RefCOCO_for_Flo2L_chunked.tar.gz.part_ac">part 3</a></td>
+    </tr>
+    <tr>
+      <td>LLama 3 8B Instruct</td>
+      <td align="left">352M</td>
+      <td align="left">RefCOCO+ train (unc)</td>
+      <td><a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Llama3_8_on_RefCOCO+_for_Flo2L_chunked.tar.gz.part_aa">part 1</a>, <a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Llama3_8_on_RefCOCO+_for_Flo2L_chunked.tar.gz.part_ab">part 2</a>, <a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Llama3_8_on_RefCOCO+_for_Flo2L_chunked.tar.gz.part_ac">part 3</a></td>
+    </tr>
+    <tr>
+      <td>LLama 3 8B Instruct</td>
+      <td align="left">352M</td>
+      <td align="left">RefCOCOg train (umd)</td>
+      <td><a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Llama3_8_on_RefCOCOg_for_Flo2L_chunked.tar.gz.part_aa">part 1</a>, <a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Llama3_8_on_RefCOCOg_for_Flo2L_chunked.tar.gz.part_ab">part 2</a>, <a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Llama3_8_on_RefCOCOg_for_Flo2L_chunked.tar.gz.part_ac">part 3</a></td>
+    </tr>
+    <tr>
+      <td>LLama 3 8B Instruct</td>
+      <td align="left">352M</td>
+      <td align="left">Talk2Car train</td>
+      <td><a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Llama3_8_on_Talk2Car_for_Flo2L_chunked.tar.gz.part_aa">part 1</a>, <a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Llama3_8_on_Talk2Car_for_Flo2L_chunked.tar.gz.part_ab">part 2</a>, <a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Llama3_8_on_Talk2Car_for_Flo2L_chunked.tar.gz.part_ac">part 3</a></td>
+    </tr>
+    <tr>
+      <td>Mixtral 8x7B Instruct</td>
+      <td align="left">114M</td>
+      <td align="left">RefCOCO train (unc)</td>
+      <td><a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Mixtral_8x7_on_RefCOCO_for_Flo2L.tar.gz">part 1</a></td>
+    </tr>
+    <tr>
+      <td>Mixtral 8x7B Instruct</td>
+      <td align="left">114M</td>
+      <td align="left">RefCOCO+ train (unc)</td>
+      <td><a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Mixtral_8x7_on_RefCOCO+_for_Flo2L.tar.gz">part 1</a></td>
+    </tr>
+    <tr>
+      <td>Mixtral 8x7B Instruct</td>
+      <td align="left">114M</td>
+      <td align="left">RefCOCOg train (umd)</td>
+      <td><a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Mixtral_8x7_on_RefCOCOg_for_Flo2L.tar.gz">part 1</a></td>
+    </tr>
+    <tr>
+      <td>Mixtral 8x7B Instruct</td>
+      <td align="left">114M</td>
+      <td align="left">Talk2Car train</td>
+      <td><a href="https://github.com/valeoai/LLM_wrapper/releases/download/v1.0.0/FT_Mixtral_8x7_on_Talk2Car_for_Flo2L.tar.gz">part 1</a></td>
+    </tr>
+  </tbody>
+</table>
 
-These checkpoints lead to the results shown in the paper's main results. For more information regarding the fine-tuning parameters used to get these checkpoints, as well as their respective REC performances, please refer to the paper's experimental details.
+Checkpoints are shared in the v1.0.0's release, as tar files, in 1 part for Mixtral and in 3 parts for Llama 3 8B (due to limitations on large binary attachments of GitHub). Please refer to [MODELS.md](MODELS.md) for the instructions on how to untar them. Once done, save the obtained checkpoint folder (containing the .pt, .json and .bin files) in a subfolder named ``my_FT_models``, placed in the proper folder, depending on the chosen training data (``./llm_wrapper/data/{dataset_name}/my_FT_models/{checkpoint_folder}``).
 
 We are releasing these weights to the scientific community to foster research advances. Remark that the model / weights license is more restrictive than the code license. Please see below.
 
