@@ -1411,7 +1411,6 @@ def main(args):
         else:
             REC_metric = REC_eval_step(args=args, loader_step_3=loader_step_3, llm=None, tokenizer=None)
 
-        print(REC_metric)
 
     return None
 
