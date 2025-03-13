@@ -34,7 +34,7 @@ conda install pytorch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 pytorch-cuda=
 
 # Install all requirements
 pip install -e .
-pip install flash-attn --no-build-isolation
+pip install --no-build-isolation flash-attn==2.7.3
 ```
 
 ### HuggingFace models

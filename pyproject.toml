@@ -7,7 +7,7 @@ name = "llm_wrapper"
 version = "1.0.0"
 description = ""
 readme = "README.md"
-requires-python = ">=3.8.0"
+requires-python = ">=3.9.18"
 authors = [
     { name = "Amaia Cardiel", email = "amaia.cardiel@valeo.com" },
 ]
@@ -30,6 +30,7 @@ dependencies = [
     "numpy==1.24.3",
     "peft==0.9.0",
     "pandas==2.1.0",
+    "timm==0.9.7",
     "transformers==4.42.3",
     "trl==0.8.1",
     "tensorboard==2.13.0",
