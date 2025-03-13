@@ -1,6 +1,6 @@
 <div align="center">
 
-# LLM-wrapper: Black-box adaptation of VLMs for Referring Expression Comprehension [ICLR 2025]
+# LLM-wrapper: Black-Box Semantic-Aware Adaptation of Vision-Language Models for Referring Expression Comprehension [ICLR 2025]
 
 [![ICLR2025 Paper](https://img.shields.io/badge/paper-ICLR2025-brightgreen)](https://openreview.net/forum?id=PgXpOOqtyd&noteId=PgXpOOqtyd)  [![Arxiv](https://img.shields.io/badge/arXiv-Paper-blue.svg)](https://arxiv.org/abs/2409.11919)
 [![Website](https://img.shields.io/badge/Project-Website-87CEEB)](https://valeoai.github.io/publications/llm_wrapper/)
