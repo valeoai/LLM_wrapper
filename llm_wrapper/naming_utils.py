@@ -584,8 +584,6 @@ def get_checkpoint_list_and_paths_for_eval(args):
     # 1) get name of folder containing checkpoints using given args
     if str(args.folder_with_checkpoints_to_eval) == "auto":
 
-        from utils import define_FT_model_name, get_FT_data_filename
-
         FT_train_data_filename = get_FT_data_filename(my_args=args, for_FT=True)
         save_FT_model_name = define_FT_model_name(my_args=args, FT_data_filename=FT_train_data_filename)
         folder_with_checkpoints = save_FT_model_name + "_auto_saved"
