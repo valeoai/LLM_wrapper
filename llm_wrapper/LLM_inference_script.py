@@ -278,7 +278,7 @@ def design_prompt_for_step_3(
             if args.detector_name_bis is None:
                 context += (
                     f"\n* In box {box_count + box_count_start}: '{query}' "
-                    "with {args.bbox_format} coordinates '{one_box}' with score {one_score},"
+                    f"with {args.bbox_format} coordinates '{one_box}' with score {one_score},"
                 )
             else:
                 context += (
